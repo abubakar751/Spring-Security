@@ -18,7 +18,6 @@ public class MySecurity {
             csrf.disable())
                     .authorizeHttpRequests(authz -> authz
                             .anyRequest().authenticated())
-
                     .sessionManagement(session -> session
                             .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
