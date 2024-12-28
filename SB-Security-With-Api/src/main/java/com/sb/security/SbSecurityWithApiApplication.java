@@ -1,4 +1,4 @@
-package com.sb.security.SB_Security_With_Api;
+package com.sb.security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

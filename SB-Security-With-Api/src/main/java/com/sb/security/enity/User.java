@@ -1,4 +1,4 @@
-package com.sb.security.SB_Security_With_Api.enity;
+package com.sb.security.enity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
