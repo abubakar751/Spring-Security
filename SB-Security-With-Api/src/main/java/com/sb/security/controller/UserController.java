@@ -36,7 +36,7 @@ public class UserController {
     public String addUser(@RequestBody User user){
 return  userService.addUser(user);
     }
-    @PostMapping
+    @PostMapping("/login")
     public  String addUser(AuthRequest authRequest ){
        Authentication authentication =authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.userName(),authRequest.password()));
         if (authentication.isAuthenticated()){
