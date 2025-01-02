@@ -16,6 +16,6 @@ public class User {
     @Column(name = "userName" ,unique = true)
     private String userName;
     private String email;
-    private  String roles;
+    private String  roles;
     private String password;
 }

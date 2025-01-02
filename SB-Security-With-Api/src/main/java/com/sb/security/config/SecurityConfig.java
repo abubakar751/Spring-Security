@@ -39,7 +39,6 @@ private final PasswordEncoder passwordEncoder;
     public SecurityFilterChain securityFilterChain(HttpSecurity security) throws Exception {
         return security.csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/welcome", "/auth/addUser", "/auth/login")
-
                         .permitAll()
                         .anyRequest()
                         .authenticated())

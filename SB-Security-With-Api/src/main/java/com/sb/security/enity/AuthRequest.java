@@ -1,4 +1,5 @@
-package com.sb.security.payload;
+package com.sb.security.enity;
 
 public record AuthRequest(String userName,String password) {
+
 }

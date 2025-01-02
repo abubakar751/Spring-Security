@@ -2,7 +2,7 @@ package com.sb.security.controller;
 
 import com.sb.security.enity.User;
 import com.sb.security.logout.BlackList;
-import com.sb.security.payload.AuthRequest;
+import com.sb.security.enity.AuthRequest;
 import com.sb.security.service.JWTService;
 import com.sb.security.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -34,14 +34,13 @@ public class UserController {
     }
     @PostMapping("/addUser")
     public String addUser(@RequestBody User user){
-return  userService.addUser(user);
+    return  userService.addUser(user);
     }
     @PostMapping("/login")
-    public  String addUser(AuthRequest authRequest ){
+    public  String addUser(@RequestBody AuthRequest authRequest ){
        Authentication authentication =authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.userName(),authRequest.password()));
         if (authentication.isAuthenticated()){
             return jwtService.generateToken(authRequest.userName());
-
         }
         else {
             throw

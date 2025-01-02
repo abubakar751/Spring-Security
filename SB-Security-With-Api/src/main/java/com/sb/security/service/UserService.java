@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 @Service
+
 public class UserService implements UserDetailsService {
     @Autowired
     private  UserRepo userRepo;
@@ -33,10 +34,7 @@ public class UserService implements UserDetailsService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         User save = userRepo.save(user);
 
-        if (Objects.nonNull(save)){
-            return  "User Saved SuccessFully";
-        }
-        return "User Not Saved";
+        return "User Saved SuccessFully";
     }
     public List<User> getAllUser(){
         return userRepo.findAll();
